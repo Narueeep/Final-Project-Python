@@ -88,14 +88,12 @@
             gap: 5px;
         }
 
-        /* ปรับขนาด input ภายใน extra-fields */
         .extra-fields input {
             width: 100%;
-            height: 50px; /* เพิ่มความสูง */
-            font-size: 18px; /* ปรับขนาดตัวอักษร */
+            height: 50px;
+            font-size: 18px;
         }
 
-        /* ทำให้ไอคอนขยับไปพร้อมปุ่มอัปโหลดไฟล์ */
         .upload-container {
             display: flex;
             align-items: center;
@@ -110,7 +108,7 @@
 
         .upload-container input[type="file"] {
             width: 100%;
-            padding-left: 50px; /* เว้นที่ให้ไอคอน */
+            padding-left: 50px;
             height: 50px;
         }
 
@@ -241,8 +239,6 @@
                         document.getElementById("specialProjectFields").style.display = "block";
                     }
                 }
-
-                // ให้แน่ใจว่าเมื่อโหลดหน้าเว็บ ฟิลด์พิเศษจะถูกซ่อนอยู่
                 document.addEventListener("DOMContentLoaded", function () {
                     show_about_org_Field();
                 });
