@@ -18,8 +18,7 @@
             display: grid;
             place-items: center;
         }
-
-        /* คอนเทนเนอร์หลักที่จัดตำแหน่ง */
+        
         .container {
             display: flex;
             flex-direction: column;
@@ -27,7 +26,6 @@
             align-items: center;
         }
 
-        /* ฟอร์มที่อยู่กลางหน้าเว็บ */
         .top-form {
             display: flex;
             justify-content: center;
@@ -35,7 +33,6 @@
             margin-bottom: 40px;
         }
 
-        /* รูปโลโก้ */
         .left img {
             width: 200px;
             height: auto;
@@ -45,8 +42,8 @@
         .right {
             display: flex;
             flex-direction: column;
-            align-items: center; /* จัดให้อยู่ตรงกลาง */
-            text-align: center; /* ทำให้ข้อความอยู่กึ่งกลาง */
+            align-items: center;
+            text-align: center;
         }
 
         .right_top {
@@ -54,24 +51,23 @@
             font-size: 60px;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-bottom: 0px; /* ลดช่องว่างด้านล่าง */
+            margin-bottom: 0px;
         }
 
         .right_bottom {
             color: #311900;
             font-size: 25px;
-            margin-top: 0px; /* ลดช่องว่างด้านบน */
+            margin-top: 0px;
         }
 
         .right hr {
-            width: 100%; /* ปรับความกว้างของเส้น */
+            width: 100%;
             border: none;
             height: 2px;
             background-color: #311900;
-            margin: 0px 0; /* ลดช่องว่างด้านบนและล่าง */
+            margin: 0px 0;
         }
 
-        /* ส่วนของ input */
         .inputs {
             display: flex;
             flex-direction: column;
@@ -111,21 +107,20 @@
 
         form[id = "role"] {
             display: flex;
-            flex-direction: row; /* จัดเรียงแนวนอน */
+            flex-direction: row;
         }
 
         .radio-container {
             display: flex;
-            align-items: center; /* จัดแนวกลางในแนวนอน */
+            align-items: center;
             font-size: 20px;
         }
 
-        /* กำหนดขนาดของ radio button */
         input[type="radio"] {
             width: 25px;
             height: 25px;
             margin-right: 10px;
-            appearance: none; /* ปิดการแสดงผลแบบเดิม */
+            appearance: none;
             border-radius: 50%;
             border: 3px solid #857462;
             background-color: aliceblue;
@@ -133,12 +128,10 @@
             transition: background-color 0.3s, border 0.3s;
         }
 
-        /* เปลี่ยนสีเมื่อเลือก */
         input[type="radio"]:checked {
-            background-color: #9c8873; /* สีพื้นหลังเมื่อเลือก */
+            background-color: #9c8873;
         }
 
-        /* เพิ่มการแสดงผลของวงกลมที่เลือก */
         input[type="radio"]:checked::before {
             content: "";
             position: absolute;
@@ -146,9 +139,9 @@
             left: 50%;
             width: 5px;
             height: 5px;
-            background-color: white; /* สีภายในวงกลมเมื่อเลือก */
+            background-color: white;
             border-radius: 50%;
-            transform: translate(-50%, -50%); /* ทำให้วงกลมสีขาวอยู่กลางวงกลมสีดำ */
+            transform: translate(-50%, -50%);
         }
 
         button {
