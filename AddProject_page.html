@@ -179,11 +179,25 @@
             </div>
             
             <div id="specialProjectFields" class="extra-fields" style="display: none;"></div>
-            
-            
+
+
             <label for="type_re" style="font-size: 20px;">โปรเจคของคุณทำเกี่ยวกับเรื่องอะไร:</label>
-            <input type="text" id="type_re" name="type_re" placeholder="ex. IT,Data,AI,Insurance,document,research,..."
-            style="width: 100%; height: 50px;">
+            <select id="type_re" name="type_re"
+                    style="width: 80%; height: 50px; border-radius: 5px; font-family: Kanit; font-size: 18px; letter-spacing: 1px;"
+                    onchange="OtherInput()">
+                <option value="">-- เลือก --</option>
+                <option value="IT">IT</option>
+                <option value="Data">Data</option>
+                <option value="AI">AI</option>
+                <option value="Insurance">Insurance</option>
+                <option value="Research">Research</option>
+                <option value="Admin">Admin</option>
+                <option value="Document">Document</option>
+                <option value="Other">อื่นๆ</option>
+            </select>
+            <input type="text" id="other_input" name="other_input" placeholder="กรอกเรื่องที่เกี่ยวข้องกับโปรเจคของคุณ"
+                style="width: 80%; height: 50px; border-radius: 5px; font-family: Kanit; font-size: 18px; letter-spacing: 1px; margin-top: 10px; display: none;">
+
             
             <textarea name="intro" placeholder="อธิบายโปรเจคของคุณคร่าวๆ " required style="width: 100%;"></textarea>
             
@@ -204,15 +218,25 @@
 
         
             <script>
+                function OtherInput() {
+                var select = document.getElementById("type_re");
+                var otherInput = document.getElementById("other_input");
+
+                if (select.value === "Other") {
+                    otherInput.style.display = "block";
+                    otherInput.setAttribute("required", "true");
+                } else {
+                    otherInput.style.display = "none";
+                    otherInput.removeAttribute("required");
+                }
+            }
+
                 function generateNameFields() {
-                    // เอาทุกช่องชื่อผู้จัดทำเก่าออกก่อน
                     const nameFieldsContainer = document.getElementById("nameFields");
                     nameFieldsContainer.innerHTML = "";
         
-                    // รับค่าจำนวนผู้จัดทำจาก input
                     const numCreators = document.getElementById("numCreators").value;
         
-                    // สร้างช่องกรอกชื่อผู้จัดทำตามจำนวน
                     for (let i = 1; i <= numCreators; i++) {
                         const label = document.createElement("label");
                         label.textContent = "ชื่อผู้จัดทำ " + i + ":";
@@ -239,6 +263,8 @@
                         document.getElementById("specialProjectFields").style.display = "block";
                     }
                 }
+
+                // ให้แน่ใจว่าเมื่อโหลดหน้าเว็บ ฟิลด์พิเศษจะถูกซ่อนอยู่
                 document.addEventListener("DOMContentLoaded", function () {
                     show_about_org_Field();
                 });
